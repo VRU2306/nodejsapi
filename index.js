@@ -2,7 +2,7 @@ const express = require('express');
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 const app = express();
-const port = process.env.PORT || 3001;
+const port = 3000;
 
 app.use(express.json());
 
