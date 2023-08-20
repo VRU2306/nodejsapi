@@ -1,9 +1,9 @@
 const express = require('express');
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
-
+const path = require("path");
 const app = express();
 const port = 3000;
-
+app.use(express.static(path.join(__dirname, "client/build")));
 app.use(express.json());
 
 app.post('/generate-token', async (req, res) => {
